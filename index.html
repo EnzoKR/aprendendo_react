@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Aprendendo JavaScript</title>
+        <script type="text/JavaScript" src="script.js"></script>
+    </head>
+    <body>
+        <h1>Aprendendo JavaScript</h1>
+        <button onclick="window.location.href='https://youtube.com';">Ir para YouTube</button> 
+        <!--botão direicionado para o YouTube, funciona apenas clicando-->
+        <button onclick="window.location.href='contato.html';">Contato</button>
+        <button onclick="window.location.href=window.location.href">Atualizar pagina</button>
+        <br>
+
+        <div id="area">
+            <br>
+            Bem vindo...
+        </div>
+        <!--div cria uma separação/uma divisão, id é como ela vai ser referida  -->
+        <br>
+        <button onclick="document.getElementById('area').innerHTML = prompt('Qual seu nome?');">Entrar</button>
+        <!--document é usado para referenciar a algum elemento da pagina, getElementById = busca um elemento pelo ID, innerHTML = subistitui o conteudo de acordo com a referencia(nesse caso ele vai trocar o conteudo do id area)-->
+        <br>
+        <button onclick="document.getElementById('area').innerHTML = 'Bem vindo ' + prompt('Qual seu nome?');">Entrar 2</button>
+
+        <div id="nomeBotao">
+            <br> Qual o nome do botão?
+        </div>
+        <button onclick="this.innerHTML = prompt('Digite o nome do botão')">Qual o nome do botão?</button>
+        <!--This é usado para referenciar o burron-->
+        <br>
+
+        <div id="funEntrar">
+            <br>
+            Função entrar
+        </div>
+        <button onclick="entrar()">Entrar</button>
+        <!--função entrar() esta sendo direciona para o scrip.js-->
+
+        <div id="funEntrar2">
+            <br>
+            Função entrar Metodo 2
+        </div>
+        <button onclick="entrar2('Enzo')">Entrar</button>
+        <!--segundo metodo-->
+        <br>
+        <!--Switch-->
+        <button onclick="pedir()">pedido</button>
+
+        
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
