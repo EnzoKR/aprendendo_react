@@ -129,3 +129,58 @@ no console:
         localStorage.getItem("nome");
         localStorage.remove("nome"); 
 */
+var nome = "";
+// se o tipo da variavel nome for indefinido faça
+if( typeof localStorage.nome == 'undefined'){
+    localStorage.nome = prompt("Digite seu nome");
+}
+nome = localStorage.nome;
+document.getElementById('nome').innerHTML = nome;
+
+var nome2 = "";
+// se o tipo da variavel nome for indefinido faça
+if( typeof sessionStorage.nome2 == 'undefined'){
+    sessionStorage.nome2 = prompt("Digite seu nome 2 ");
+}
+nome = sessionStorage.nome2;
+document.getElementById('nome2').innerHTML = nome;
+
+/*
+variavel "let", é uma variavel que só pode ser usado no mesmo  escopo
+Ex:
+*/
+if (nome == "Enzo"){
+    let sobrenome = 'Kato';
+    console.log("Enzo"+sobrenome)
+}
+// sobrenome; ele n vai mostrar o sobrenome pq a variavel LET esta dentro do if e n podemos acessar fora 
+
+const nome3 = "Enzo";
+// variavel CONSTante, ela não pode ser mudada 
+
+let primeiros = [1,2,3];
+let numeros = [...primeiros,4,5,6];
+// ... atribui o valor da variavel primeiros na variavel numeros 
+// caso n use os ""..."" ele adiciona um array na variavel 
+
+let pessoa = {
+    nome: "Enzo",
+    idade: 21,
+    cargo: "Programador"
+}
+let novaPessoa = {
+    ...pessoa,
+    anoAtual: 2024,
+    cidade: "Marília"
+}
+// usando o Spread Operator
+
+function cadastrarPessoa(info){
+    let novosDados ={
+        ...info,
+        sobrenome: kato
+    }     
+}
+console.log(cadastrarPessoa({nome: 'Enzo'}));
+
+
