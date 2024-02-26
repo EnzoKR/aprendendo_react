@@ -183,4 +183,73 @@ function cadastrarPessoa(info){
 }
 console.log(cadastrarPessoa({nome: 'Enzo'}));
 
+// uso do Rest Operador 
+function cadastrar(usuarios, ...novosUsuarios){
+    let totalUsuarios = [
+        ...usuarios,
+        ...novosUsuarios
+    ];
+    return console.log(totalUsuarios);
+}
+let usuarios = ("Mateus", "Lucas");
+let novosUsuarios = cadastrar(usuarios,"Henrique", "João");
+
+// trabalhando com operações em Array
+const lista = [1,2,3,4,5,6];
+const novaLista = lista.map(function(item, index){
+    return item +index;
+});
+console.log(novaLista);
+// map faz com q passar em cada item do array 
+const soma = lista.reduce(function(total,proximo){
+        return total + proximo;
+});
+console.log(soma);
+// vai passar item por item somando o proximo
+const find = lista.find(function(item){
+    return item == 6;
+});
+console.log(find);
+// procura o item na lista 
+
+//função anonima 
+function aidcionar(...numeros2){
+    let total = numeros2.reduce((total,proximo) => {
+        // foi reduzido numeros2.reduce(function(total,proximo){});
+        let soma = total + proximo;
+    });
+    console.log(total);
+}
+aidcionar(1,2,3,4,5,6);
+
+//includes verifica de o item existe 
+let nomes = ['Mateus', 'Lucas'];
+console.log(nomes.includes('lucas'));
+// retuorna TRUE ou um FLASE
+if(nomes.includes('Mateus')){
+    console.log('Está na lista');
+}else{
+    console.log('Não está na lista');
+}
+// endsWith verifica se o item termina com a referencia
+console.log(nomes.endsWith('eus'));
+// starsWith verifica se o item começa com a referencia
+console.log(nomes.starsWith('Mat'));
+// some (tem pelo menos um) retorna TRUE ou False
+console.log(nomes.some(nome => nome === 'Mateus'));
+// every (todos os item precisam passar pela referencia) retorna TRUE ou FALSE
+let nomes2 = [
+    {nome: 'Mateus',idade: 18},
+    {nome: 'Lucas',idade: 29},
+    {nome: 'Henrique',idade:19}
+];
+console.log(nomes2.every(nome => nome.idade >= 18));
+
+if (nomes2.every(nome => nome.idade >= 18)){
+    console.log('Todos os nomes são maiores de idade');
+}else{
+    console.log('Um ou mais nomes não são maiores de idade');
+}
+
+
 
